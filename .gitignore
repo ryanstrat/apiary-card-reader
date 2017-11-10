@@ -42,3 +42,7 @@ eagle.epf
 # file locks introduced since 7.x
 *.lck
 
+.pioenvs
+.piolibdeps
+.clang_complete
+.gcc-flags.json
