@@ -12816,6 +12816,14 @@ Source: www.kingbright.com</description>
 <smd name="3" x="-0.95" y="1.2" dx="0.7" dy="1" layer="1"/>
 <smd name="4" x="-0.95" y="-1.2" dx="0.7" dy="1" layer="1"/>
 <smd name="5" x="0.95" y="-1.2" dx="0.7" dy="1" layer="1"/>
+<wire x1="-2" y1="2" x2="2" y2="2" width="0.5" layer="21"/>
+<wire x1="2" y1="2" x2="2" y2="0.5" width="0.5" layer="21"/>
+<wire x1="2" y1="0.5" x2="2" y2="-2" width="0.5" layer="21"/>
+<wire x1="2" y1="-2" x2="-2" y2="-2" width="0.5" layer="21"/>
+<wire x1="-2" y1="-2" x2="-2" y2="0.5" width="0.5" layer="21"/>
+<wire x1="-2" y1="2" x2="-2" y2="0.5" width="0.5" layer="21"/>
+<wire x1="-2" y1="0.5" x2="2" y2="0.5" width="0.5" layer="21"/>
+<text x="2.5" y="-0.5" size="1.5" layer="21">&gt;NAME</text>
 </package>
 <package name="L0805">
 <description>&lt;b&gt;CAPACITOR&lt;/b&gt;&lt;p&gt;</description>
@@ -12936,6 +12944,7 @@ Source: www.kingbright.com</description>
 <wire x1="4.5" y1="2.5" x2="4.5" y2="-2.5" width="0.5" layer="21"/>
 <wire x1="4.5" y1="-2.5" x2="-4.5" y2="-2.5" width="0.5" layer="21"/>
 <wire x1="-4.5" y1="-2.5" x2="-4.5" y2="2.5" width="0.5" layer="21"/>
+<text x="-4.5" y="-4.5" size="1.5" layer="21">&gt;NAME</text>
 </package>
 <package name="TL1100">
 <pad name="2" x="6.25" y="2.5" drill="1.35"/>
@@ -13636,7 +13645,7 @@ Source: www.kingbright.com</description>
 </device>
 </devices>
 </deviceset>
-<deviceset name="VBUS">
+<deviceset name="VBUS" prefix="B">
 <gates>
 <gate name="G$1" symbol="VBUS" x="0" y="0"/>
 </gates>
@@ -14312,10 +14321,10 @@ by exp-lbrs.ulp</description>
 <part name="SUPPLY63" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
 <part name="C32" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-US" device="C0603" package3d_urn="urn:adsk.eagle:package:23616/2" value="0.1uF"/>
 <part name="J8" library="RoboJackets-Connectors" deviceset="6-PIN_2MM-*" device="V"/>
-<part name="D8" library="lib-card" deviceset="LED-SMD" device="" technology="-GREEN" value="GREEN"/>
+<part name="D8" library="lib-card" deviceset="LED-SMD" device="" technology="-GREEN" value="RED"/>
 <part name="D9" library="lib-card" deviceset="LED-SMD" device="" technology="-GREEN" value="GREEN"/>
 <part name="D10" library="lib-card" deviceset="LED-SMD" device="" technology="-GREEN" value="YELLOW"/>
-<part name="D11" library="lib-card" deviceset="LED-SMD" device="" technology="-GREEN" value="RED"/>
+<part name="D11" library="lib-card" deviceset="LED-SMD" device="" technology="-GREEN" value="GREEN"/>
 <part name="R20" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="R0603" package3d_urn="urn:adsk.eagle:package:23555/2" value="1k"/>
 <part name="R21" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="R0603" package3d_urn="urn:adsk.eagle:package:23555/2" value="1k"/>
 <part name="R22" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="R0603" package3d_urn="urn:adsk.eagle:package:23555/2" value="1k"/>
@@ -14424,7 +14433,7 @@ by exp-lbrs.ulp</description>
 <instance part="R9" gate="G$1" x="251.46" y="177.8" rot="R90"/>
 <instance part="R10" gate="G$1" x="208.28" y="142.24" rot="R180"/>
 <instance part="SUPPLY34" gate="GND" x="203.2" y="139.7"/>
-<instance part="R11" gate="G$1" x="241.3" y="154.94" rot="R180"/>
+<instance part="R11" gate="G$1" x="241.3" y="154.94"/>
 <instance part="R12" gate="G$1" x="241.3" y="144.78" rot="R180"/>
 <instance part="SUPPLY35" gate="P" x="261.62" y="160.02"/>
 <instance part="D4" gate="G$1" x="254" y="154.94" rot="R270"/>
@@ -15059,28 +15068,21 @@ by exp-lbrs.ulp</description>
 <label x="109.22" y="134.62" size="1.27" layer="95" xref="yes"/>
 </segment>
 </net>
-<net name="N$9" class="0">
+<net name="WIFI-GPIO16" class="0">
 <segment>
 <pinref part="U4" gate="G$1" pin="GPIO16"/>
 <wire x1="228.6" y1="160.02" x2="228.6" y2="152.4" width="0.1524" layer="91"/>
 <wire x1="228.6" y1="152.4" x2="236.22" y2="152.4" width="0.1524" layer="91"/>
-<pinref part="R11" gate="G$1" pin="PIN2"/>
-<wire x1="236.22" y1="152.4" x2="236.22" y2="154.94" width="0.1524" layer="91"/>
+<pinref part="R11" gate="G$1" pin="PIN1"/>
+<wire x1="236.22" y1="154.94" x2="236.22" y2="152.4" width="0.1524" layer="91"/>
 </segment>
 </net>
-<net name="N$10" class="0">
+<net name="WIFI-GPIO15" class="0">
 <segment>
 <pinref part="U4" gate="G$1" pin="GPIO15"/>
 <wire x1="226.06" y1="160.02" x2="226.06" y2="144.78" width="0.1524" layer="91"/>
 <wire x1="226.06" y1="144.78" x2="236.22" y2="144.78" width="0.1524" layer="91"/>
 <pinref part="R12" gate="G$1" pin="PIN2"/>
-</segment>
-</net>
-<net name="WIFI-LED-Y" class="0">
-<segment>
-<pinref part="R11" gate="G$1" pin="PIN1"/>
-<pinref part="D4" gate="G$1" pin="C"/>
-<wire x1="246.38" y1="154.94" x2="248.92" y2="154.94" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="WIFI-LED-G" class="0">
@@ -15444,6 +15446,13 @@ by exp-lbrs.ulp</description>
 <label x="246.38" y="99.06" size="1.27" layer="95" rot="R180" xref="yes"/>
 </segment>
 </net>
+<net name="WIFI-LED-Y" class="0">
+<segment>
+<pinref part="R11" gate="G$1" pin="PIN2"/>
+<pinref part="D4" gate="G$1" pin="C"/>
+<wire x1="246.38" y1="154.94" x2="248.92" y2="154.94" width="0.1524" layer="91"/>
+</segment>
+</net>
 </nets>
 </sheet>
 <sheet>
@@ -15565,9 +15574,9 @@ Connector</text>
 <instance part="R22" gate="G$1" x="78.74" y="96.52"/>
 <instance part="R23" gate="G$1" x="78.74" y="78.74"/>
 <instance part="SUPPLY64" gate="GND" x="101.6" y="66.04"/>
-<instance part="SUPPLY65" gate="+5V" x="68.58" y="83.82"/>
+<instance part="SUPPLY65" gate="+5V" x="68.58" y="137.16"/>
 <instance part="SUPPLY66" gate="G$1" x="68.58" y="101.6"/>
-<instance part="U$1" gate="G$1" x="68.58" y="137.16"/>
+<instance part="U$1" gate="G$1" x="68.58" y="83.82"/>
 <instance part="SUPPLY67" gate="P" x="68.58" y="119.38"/>
 </instances>
 <busses>
@@ -15767,15 +15776,15 @@ Connector</text>
 <wire x1="256.54" y1="106.68" x2="256.54" y2="104.14" width="0.1524" layer="91"/>
 </segment>
 <segment>
-<pinref part="J8" gate="G$1" pin="6"/>
-<wire x1="152.4" y1="127" x2="149.86" y2="127" width="0.1524" layer="91"/>
-<label x="149.86" y="127" size="1.27" layer="95" rot="R180" xref="yes"/>
+<wire x1="152.4" y1="121.92" x2="149.86" y2="121.92" width="0.1524" layer="91"/>
+<label x="149.86" y="121.92" size="1.27" layer="95" rot="R180" xref="yes"/>
+<pinref part="J8" gate="G$1" pin="5"/>
 </segment>
 <segment>
-<pinref part="R23" gate="G$1" pin="1"/>
-<wire x1="73.66" y1="78.74" x2="68.58" y2="78.74" width="0.1524" layer="91"/>
-<wire x1="68.58" y1="78.74" x2="68.58" y2="81.28" width="0.1524" layer="91"/>
+<pinref part="R20" gate="G$1" pin="1"/>
+<wire x1="73.66" y1="132.08" x2="68.58" y2="132.08" width="0.1524" layer="91"/>
 <pinref part="SUPPLY65" gate="+5V" pin="+5V"/>
+<wire x1="68.58" y1="134.62" x2="68.58" y2="132.08" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="LED-STAT2" class="0">
@@ -15792,7 +15801,7 @@ Connector</text>
 <wire x1="198.12" y1="93.98" x2="198.12" y2="99.06" width="0.1524" layer="91"/>
 </segment>
 </net>
-<net name="N$3" class="0">
+<net name="CHRG-STAT1" class="0">
 <segment>
 <pinref part="U2" gate="G$1" pin="STAT1"/>
 <pinref part="R2" gate="G$1" pin="1"/>
@@ -15800,7 +15809,7 @@ Connector</text>
 <wire x1="198.12" y1="81.28" x2="198.12" y2="83.82" width="0.1524" layer="91"/>
 </segment>
 </net>
-<net name="N$4" class="0">
+<net name="CHRG-STAT2" class="0">
 <segment>
 <pinref part="U2" gate="G$1" pin="STAT2"/>
 <pinref part="R1" gate="G$1" pin="1"/>
@@ -15808,7 +15817,7 @@ Connector</text>
 <wire x1="182.88" y1="78.74" x2="182.88" y2="83.82" width="0.1524" layer="91"/>
 </segment>
 </net>
-<net name="N$5" class="0">
+<net name="CHRG-!PG" class="0">
 <segment>
 <pinref part="U2" gate="G$1" pin="PG"/>
 <pinref part="R3" gate="G$1" pin="1"/>
@@ -15823,7 +15832,7 @@ Connector</text>
 <wire x1="256.54" y1="93.98" x2="256.54" y2="96.52" width="0.1524" layer="91"/>
 </segment>
 </net>
-<net name="N$7" class="0">
+<net name="CHRG-PROG" class="0">
 <segment>
 <pinref part="R4" gate="G$1" pin="2"/>
 <pinref part="U2" gate="G$1" pin="PROG"/>
@@ -15831,7 +15840,7 @@ Connector</text>
 <wire x1="241.3" y1="76.2" x2="238.76" y2="76.2" width="0.1524" layer="91"/>
 </segment>
 </net>
-<net name="N$8" class="0">
+<net name="CHRG-THERM" class="0">
 <segment>
 <pinref part="U2" gate="G$1" pin="THERM"/>
 <wire x1="238.76" y1="81.28" x2="251.46" y2="81.28" width="0.1524" layer="91"/>
@@ -15961,15 +15970,15 @@ Connector</text>
 <wire x1="99.06" y1="195.58" x2="104.14" y2="195.58" width="0.1524" layer="91"/>
 </segment>
 <segment>
-<wire x1="152.4" y1="121.92" x2="149.86" y2="121.92" width="0.1524" layer="91"/>
-<label x="149.86" y="121.92" size="1.27" layer="95" rot="R180" xref="yes"/>
-<pinref part="J8" gate="G$1" pin="5"/>
+<pinref part="J8" gate="G$1" pin="6"/>
+<wire x1="152.4" y1="127" x2="149.86" y2="127" width="0.1524" layer="91"/>
+<label x="149.86" y="127" size="1.27" layer="95" rot="R180" xref="yes"/>
 </segment>
 <segment>
-<pinref part="R20" gate="G$1" pin="1"/>
-<wire x1="73.66" y1="132.08" x2="68.58" y2="132.08" width="0.1524" layer="91"/>
-<wire x1="68.58" y1="132.08" x2="68.58" y2="134.62" width="0.1524" layer="91"/>
+<pinref part="R23" gate="G$1" pin="1"/>
+<wire x1="73.66" y1="78.74" x2="68.58" y2="78.74" width="0.1524" layer="91"/>
 <pinref part="U$1" gate="G$1" pin="VBUS"/>
+<wire x1="68.58" y1="81.28" x2="68.58" y2="78.74" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="BATT-PRE-FUSE" class="0">
