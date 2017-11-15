@@ -13322,7 +13322,7 @@ In this library you will find LEDs and other visual output devices.
 <label x="109.22" y="162.56" size="1.27" layer="95" xref="yes"/>
 </segment>
 </net>
-<net name="BTN-DOWN" class="0">
+<net name="BTN-LEFT" class="0">
 <segment>
 <pinref part="S4" gate="G$1" pin="1A"/>
 <wire x1="160.02" y1="165.1" x2="157.48" y2="165.1" width="0.1524" layer="91"/>
@@ -13339,7 +13339,7 @@ In this library you will find LEDs and other visual output devices.
 <label x="109.22" y="170.18" size="1.27" layer="95" xref="yes"/>
 </segment>
 </net>
-<net name="BTN-LEFT" class="0">
+<net name="BTN-RIGHT" class="0">
 <segment>
 <pinref part="S5" gate="G$1" pin="1A"/>
 <wire x1="160.02" y1="142.24" x2="157.48" y2="142.24" width="0.1524" layer="91"/>
@@ -13356,7 +13356,7 @@ In this library you will find LEDs and other visual output devices.
 <label x="27.94" y="134.62" size="1.27" layer="95" rot="R180" xref="yes"/>
 </segment>
 </net>
-<net name="BTN-RIGHT" class="0">
+<net name="BTN-DOWN" class="0">
 <segment>
 <label x="154.94" y="119.38" size="1.27" layer="95" rot="R180" xref="yes"/>
 <pinref part="C15" gate="G$1" pin="1"/>
