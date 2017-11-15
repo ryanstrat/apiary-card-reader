@@ -14215,8 +14215,8 @@ Connector</text>
 </sheet>
 </sheets>
 <errors>
-<approved hash="202,1,35.56,58.42,J3,4,,,,"/>
-<approved hash="202,1,200.66,175.26,U4,RXD,,,,"/>
+<approved hash="202,1,35.56,58.42,J7,4,,,,"/>
+<approved hash="202,1,200.66,175.26,X3,RXD,,,,"/>
 </errors>
 </schematic>
 </drawing>
