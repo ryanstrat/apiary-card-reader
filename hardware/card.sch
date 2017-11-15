@@ -15123,9 +15123,9 @@ by exp-lbrs.ulp</description>
 <wire x1="157.48" y1="180.34" x2="162.56" y2="180.34" width="0.1524" layer="91"/>
 </segment>
 <segment>
-<pinref part="U1" gate="G$1" pin="PA18/I2/SERCOM1+3.2"/>
-<wire x1="106.68" y1="124.46" x2="109.22" y2="124.46" width="0.1524" layer="91"/>
-<label x="109.22" y="124.46" size="1.27" layer="95" xref="yes"/>
+<pinref part="U1" gate="G$1" pin="PA15/I15/SERCOM3+4.3"/>
+<wire x1="106.68" y1="132.08" x2="109.22" y2="132.08" width="0.1524" layer="91"/>
+<label x="109.22" y="132.08" size="1.27" layer="95" xref="yes"/>
 </segment>
 </net>
 <net name="BTN-DOWN" class="0">
@@ -15157,9 +15157,9 @@ by exp-lbrs.ulp</description>
 <junction x="157.48" y="142.24"/>
 </segment>
 <segment>
-<pinref part="U1" gate="G$1" pin="PA16/I2C/I0/SERCOM1+3.0"/>
-<wire x1="106.68" y1="129.54" x2="109.22" y2="129.54" width="0.1524" layer="91"/>
-<label x="109.22" y="129.54" size="1.27" layer="95" xref="yes"/>
+<pinref part="U1" gate="G$1" pin="PA18/I2/SERCOM1+3.2"/>
+<wire x1="106.68" y1="124.46" x2="109.22" y2="124.46" width="0.1524" layer="91"/>
+<label x="109.22" y="124.46" size="1.27" layer="95" xref="yes"/>
 </segment>
 </net>
 <net name="BTN-RIGHT" class="0">
@@ -15174,9 +15174,9 @@ by exp-lbrs.ulp</description>
 <junction x="157.48" y="119.38"/>
 </segment>
 <segment>
-<pinref part="U1" gate="G$1" pin="PA15/I15/SERCOM3+4.3"/>
-<wire x1="106.68" y1="132.08" x2="109.22" y2="132.08" width="0.1524" layer="91"/>
-<label x="109.22" y="132.08" size="1.27" layer="95" xref="yes"/>
+<pinref part="U1" gate="G$1" pin="PA16/I2C/I0/SERCOM1+3.0"/>
+<wire x1="106.68" y1="129.54" x2="109.22" y2="129.54" width="0.1524" layer="91"/>
+<label x="109.22" y="129.54" size="1.27" layer="95" xref="yes"/>
 </segment>
 </net>
 <net name="USB-HOST-EN" class="0">
