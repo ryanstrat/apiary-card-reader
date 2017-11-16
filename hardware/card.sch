@@ -10691,26 +10691,6 @@ Source: AVX .. aphvc.pdf</description>
 In this library you will find all the connectors used on any of our boards.
 &lt;/p&gt;</description>
 <packages>
-<package name="B2P">
-<wire x1="6.9" y1="4.85" x2="-2.9" y2="4.85" width="0.127" layer="21"/>
-<wire x1="-2.9" y1="4.85" x2="-2.9" y2="-4.85" width="0.127" layer="21"/>
-<wire x1="-2.9" y1="-4.85" x2="6.9" y2="-4.85" width="0.127" layer="21"/>
-<wire x1="6.9" y1="-4.85" x2="6.9" y2="4.85" width="0.127" layer="21"/>
-<pad name="2" x="3.98" y="0" drill="1.65" rot="R180"/>
-<pad name="1" x="0.02" y="0" drill="1.65" shape="square" rot="R180"/>
-<text x="2" y="5.35" size="1" layer="25" font="vector" ratio="10" align="bottom-center">&gt;NAME</text>
-</package>
-<package name="B2PS-CENTERED">
-<wire x1="-4" y1="0" x2="-4" y2="-4" width="0.2" layer="21"/>
-<wire x1="4" y1="-4" x2="4" y2="0" width="0.2" layer="21"/>
-<wire x1="-4" y1="-4" x2="-4" y2="-7.2" width="0.2" layer="21"/>
-<pad name="2" x="1.98" y="0" drill="1.65" rot="R180"/>
-<pad name="1" x="-1.98" y="0" drill="1.65" shape="square" rot="R180"/>
-<text x="0" y="1.85" size="1" layer="25" font="vector" ratio="10" align="bottom-center">&gt;NAME</text>
-<wire x1="4" y1="-7.2" x2="4" y2="-4" width="0.2" layer="21"/>
-<wire x1="-4" y1="-4" x2="4" y2="-4" width="0.2" layer="21"/>
-<wire x1="-4" y1="-7.2" x2="4" y2="-7.2" width="0.2" layer="21"/>
-</package>
 <package name="2MM-6-H">
 <wire x1="-6.2" y1="2" x2="-6.2" y2="-8" width="0.127" layer="21"/>
 <wire x1="-6.2" y1="-8" x2="8.2" y2="-8" width="0.127" layer="21"/>
@@ -10737,20 +10717,28 @@ In this library you will find all the connectors used on any of our boards.
 <pad name="6" x="6" y="0" drill="0.8" rot="R180"/>
 <text x="1" y="3.5" size="1" layer="25" font="vector" ratio="10" align="bottom-center">&gt;NAME</text>
 </package>
+<package name="1X2">
+<wire x1="-1.905" y1="1.27" x2="-0.635" y2="1.27" width="0.1524" layer="21"/>
+<wire x1="-0.635" y1="1.27" x2="0" y2="0.635" width="0.1524" layer="21"/>
+<wire x1="0" y1="0.635" x2="0" y2="-0.635" width="0.1524" layer="21"/>
+<wire x1="0" y1="-0.635" x2="-0.635" y2="-1.27" width="0.1524" layer="21"/>
+<wire x1="0" y1="0.635" x2="0.635" y2="1.27" width="0.1524" layer="21"/>
+<wire x1="0.635" y1="1.27" x2="1.905" y2="1.27" width="0.1524" layer="21"/>
+<wire x1="1.905" y1="1.27" x2="2.54" y2="0.635" width="0.1524" layer="21"/>
+<wire x1="2.54" y1="0.635" x2="2.54" y2="-0.635" width="0.1524" layer="21"/>
+<wire x1="2.54" y1="-0.635" x2="1.905" y2="-1.27" width="0.1524" layer="21"/>
+<wire x1="1.905" y1="-1.27" x2="0.635" y2="-1.27" width="0.1524" layer="21"/>
+<wire x1="0.635" y1="-1.27" x2="0" y2="-0.635" width="0.1524" layer="21"/>
+<wire x1="-2.54" y1="0.635" x2="-2.54" y2="-0.635" width="0.1524" layer="21"/>
+<wire x1="-1.905" y1="1.27" x2="-2.54" y2="0.635" width="0.1524" layer="21"/>
+<wire x1="-2.54" y1="-0.635" x2="-1.905" y2="-1.27" width="0.1524" layer="21"/>
+<wire x1="-0.635" y1="-1.27" x2="-1.905" y2="-1.27" width="0.1524" layer="21"/>
+<pad name="1" x="-1.27" y="0" drill="1.016" diameter="2" shape="octagon" rot="R90"/>
+<pad name="2" x="1.27" y="0" drill="1.016" diameter="2" shape="octagon" rot="R90"/>
+<text x="-2.5" y="1.5" size="1.27" layer="25" ratio="10">&gt;NAME</text>
+</package>
 </packages>
 <symbols>
-<symbol name="2-PIN_CONN">
-<circle x="-0.762" y="2.54" radius="0.762" width="0.254" layer="94"/>
-<circle x="-0.762" y="-2.54" radius="0.762" width="0.254" layer="94"/>
-<text x="-5.08" y="7.62" size="1.778" layer="95" font="vector" align="top-left">&gt;NAME</text>
-<text x="-5.08" y="-7.62" size="1.778" layer="96" font="vector">&gt;VALUE</text>
-<pin name="1" x="5.08" y="2.54" visible="pin" length="middle" rot="R180"/>
-<pin name="2" x="5.08" y="-2.54" visible="pin" length="middle" rot="R180"/>
-<wire x1="-5.08" y1="5.08" x2="-5.08" y2="-5.08" width="0.254" layer="94"/>
-<wire x1="-5.08" y1="-5.08" x2="2.54" y2="-5.08" width="0.254" layer="94"/>
-<wire x1="2.54" y1="-5.08" x2="2.54" y2="5.08" width="0.254" layer="94"/>
-<wire x1="2.54" y1="5.08" x2="-5.08" y2="5.08" width="0.254" layer="94"/>
-</symbol>
 <symbol name="6-PIN_CONN">
 <circle x="-0.762" y="12.7" radius="0.762" width="0.254" layer="94"/>
 <circle x="-0.762" y="7.62" radius="0.762" width="0.254" layer="94"/>
@@ -10771,70 +10759,18 @@ In this library you will find all the connectors used on any of our boards.
 <wire x1="2.54" y1="15.24" x2="-5.08" y2="15.24" width="0.254" layer="94"/>
 <wire x1="-5.08" y1="15.24" x2="-5.08" y2="-15.24" width="0.254" layer="94"/>
 </symbol>
+<symbol name="PINHD2">
+<wire x1="-6.35" y1="-2.54" x2="1.27" y2="-2.54" width="0.4064" layer="94"/>
+<wire x1="1.27" y1="-2.54" x2="1.27" y2="5.08" width="0.4064" layer="94"/>
+<wire x1="1.27" y1="5.08" x2="-6.35" y2="5.08" width="0.4064" layer="94"/>
+<wire x1="-6.35" y1="5.08" x2="-6.35" y2="-2.54" width="0.4064" layer="94"/>
+<text x="-6.35" y="5.715" size="1.778" layer="95">&gt;NAME</text>
+<text x="-6.35" y="-5.08" size="1.778" layer="96">&gt;VALUE</text>
+<pin name="1" x="-2.54" y="2.54" visible="pad" length="short" direction="pas" function="dot"/>
+<pin name="2" x="-2.54" y="0" visible="pad" length="short" direction="pas" function="dot"/>
+</symbol>
 </symbols>
 <devicesets>
-<deviceset name="B2P?-VH(LF)(SN)" prefix="J">
-<description>&lt;h1&gt;
-Power Connector
-&lt;/h1&gt;&lt;br/&gt;
-
-&lt;img src="http://media.digikey.com/photos/JST%20Photos/B2PS-VH_sml.jpg" width="130"&gt;
-
-&lt;table&gt;
-&lt;tr&gt;
-&lt;td&gt;
-&lt;b&gt;Brand: &lt;/b&gt;
-&lt;/td&gt;&lt;td&gt;
-&lt;a href="https://www.jst.com/"&gt;JST Sales America Inc.&lt;/a&gt;
-&lt;/td&gt;
-&lt;/tr&gt;&lt;tr&gt;
-&lt;td&gt;
-&lt;b&gt;Series:&lt;/b&gt;
-&lt;/td&gt;
-&lt;td&gt;
-&lt;a href="http://www.digikey.com/product-search/en?FV=fff40016,fff802f3,ffec0e9d"&gt;VH&lt;/a&gt;
-&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;
-&lt;b&gt;Distributor:&lt;/b&gt;
-&lt;/td&gt;
-&lt;td&gt;
-&lt;a href="http://www.digikey.com/product-detail/en/B2PS-VH%28LF%29%28SN%29/455-1648-ND/926555"&gt;Digi-Key&lt;/a&gt;
-&lt;/td&gt;
-
-&lt;/tr&gt;
-&lt;/table&gt;&lt;br/&gt;</description>
-<gates>
-<gate name="G$1" symbol="2-PIN_CONN" x="0" y="0"/>
-</gates>
-<devices>
-<device name="" package="B2P">
-<connects>
-<connect gate="G$1" pin="1" pad="1"/>
-<connect gate="G$1" pin="2" pad="2"/>
-</connects>
-<technologies>
-<technology name="">
-<attribute name="PINS" value="2"/>
-<attribute name="PIN_PITCH" value="3.96 mm"/>
-</technology>
-</technologies>
-</device>
-<device name="S" package="B2PS-CENTERED">
-<connects>
-<connect gate="G$1" pin="1" pad="1"/>
-<connect gate="G$1" pin="2" pad="2"/>
-</connects>
-<technologies>
-<technology name="">
-<attribute name="DIGIKEY" value="455-1648-ND" constant="no"/>
-<attribute name="MPN" value="B2PS-VH(LF)(SN)" constant="no"/>
-</technology>
-</technologies>
-</device>
-</devices>
-</deviceset>
 <deviceset name="6-PIN_2MM-*" prefix="J">
 <gates>
 <gate name="G$1" symbol="6-PIN_CONN" x="0" y="0" swaplevel="1"/>
@@ -10870,6 +10806,22 @@ Power Connector
 <attribute name="PINS" value="6"/>
 <attribute name="PIN_PITCH" value="2.0 mm"/>
 </technology>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="CONN-2" prefix="J" uservalue="yes">
+<gates>
+<gate name="G$1" symbol="PINHD2" x="0" y="0"/>
+</gates>
+<devices>
+<device name="VERT" package="1X2">
+<connects>
+<connect gate="G$1" pin="1" pad="1"/>
+<connect gate="G$1" pin="2" pad="2"/>
+</connects>
+<technologies>
+<technology name=""/>
 </technologies>
 </device>
 </devices>
@@ -14683,7 +14635,7 @@ In this library you will find LEDs and other visual output devices.
 <part name="R6" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="R0603" package3d_urn="urn:adsk.eagle:package:23555/2" value="1k"/>
 <part name="R7" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="R0603" package3d_urn="urn:adsk.eagle:package:23555/2" value="1k"/>
 <part name="SUPPLY40" library="lib-card" deviceset="+3.3V" device=""/>
-<part name="J6" library="RoboJackets-Connectors" deviceset="B2P?-VH(LF)(SN)" device="S"/>
+<part name="J6" library="CardReader" deviceset="JST_2PIN" device=""/>
 <part name="R21" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="R0603" package3d_urn="urn:adsk.eagle:package:23555/2" value="0"/>
 <part name="C24" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-US" device="C0603" package3d_urn="urn:adsk.eagle:package:23616/2" value="1uF"/>
 <part name="SUPPLY33" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
@@ -14786,6 +14738,9 @@ In this library you will find LEDs and other visual output devices.
 <part name="D9" library="RoboJackets-LEDs" deviceset="LED-SMD" device="" technology="-GREEN" value="GREEN"/>
 <part name="D10" library="RoboJackets-LEDs" deviceset="LED-SMD" device="" technology="-YELLOW" value="YELLOW"/>
 <part name="D11" library="RoboJackets-LEDs" deviceset="LED-SMD" device="" technology="-RED" value="RED"/>
+<part name="R24" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="R0603" package3d_urn="urn:adsk.eagle:package:23555/2" value="1k"/>
+<part name="SUPPLY68" library="lib-card" deviceset="+3.3V" device=""/>
+<part name="J10" library="RoboJackets-Connectors" deviceset="CONN-2" device="VERT"/>
 </parts>
 <sheets>
 <sheet>
@@ -14949,6 +14904,9 @@ In this library you will find LEDs and other visual output devices.
 <instance part="D2" gate="G$1" x="251.46" y="154.94"/>
 <instance part="D3" gate="G$1" x="251.46" y="144.78"/>
 <instance part="D1" gate="G$1" x="132.08" y="119.38" rot="R90"/>
+<instance part="R24" gate="G$1" x="127" y="101.6" rot="R90"/>
+<instance part="SUPPLY68" gate="P" x="127" y="111.76"/>
+<instance part="J10" gate="G$1" x="137.16" y="93.98"/>
 </instances>
 <busses>
 </busses>
@@ -15426,6 +15384,11 @@ In this library you will find LEDs and other visual output devices.
 <pinref part="J8" gate="G$1" pin="1"/>
 <wire x1="200.66" y1="116.84" x2="200.66" y2="114.3" width="0.1524" layer="91"/>
 <wire x1="200.66" y1="114.3" x2="203.2" y2="114.3" width="0.1524" layer="91"/>
+</segment>
+<segment>
+<pinref part="SUPPLY68" gate="P" pin="+3.3V"/>
+<pinref part="R24" gate="G$1" pin="2"/>
+<wire x1="127" y1="109.22" x2="127" y2="106.68" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="SD-!CS" class="0">
@@ -15931,6 +15894,23 @@ In this library you will find LEDs and other visual output devices.
 <pinref part="D2" gate="G$1" pin="K"/>
 </segment>
 </net>
+<net name="SWCLK" class="0">
+<segment>
+<pinref part="U1" gate="G$1" pin="PA30/I10/SECOM1.2/SWCLK"/>
+<wire x1="106.68" y1="96.52" x2="127" y2="96.52" width="0.1524" layer="91"/>
+<pinref part="R24" gate="G$1" pin="1"/>
+<wire x1="127" y1="96.52" x2="134.62" y2="96.52" width="0.1524" layer="91"/>
+<junction x="127" y="96.52"/>
+<pinref part="J10" gate="G$1" pin="1"/>
+</segment>
+</net>
+<net name="SWDIO" class="0">
+<segment>
+<pinref part="U1" gate="G$1" pin="PA31/I11/SECOM1.3/SWDIO"/>
+<wire x1="106.68" y1="93.98" x2="134.62" y2="93.98" width="0.1524" layer="91"/>
+<pinref part="J10" gate="G$1" pin="2"/>
+</segment>
+</net>
 </nets>
 </sheet>
 <sheet>
@@ -16012,8 +15992,8 @@ Connector</text>
 <instance part="R15" gate="G$1" x="160.02" y="182.88" rot="R270"/>
 <instance part="R16" gate="G$1" x="160.02" y="167.64" rot="R270"/>
 <instance part="SUPPLY51" gate="GND" x="160.02" y="160.02"/>
-<instance part="J6" gate="G$1" x="233.68" y="109.22" smashed="yes">
-<attribute name="NAME" x="228.6" y="116.84" size="1.778" layer="95" font="vector" align="top-left"/>
+<instance part="J6" gate="G$1" x="233.68" y="106.68" smashed="yes" rot="R180">
+<attribute name="NAME" x="238.76" y="99.06" size="1.778" layer="95" font="vector" rot="R180" align="top-left"/>
 </instance>
 <instance part="R21" gate="G$1" x="246.38" y="106.68" rot="R90"/>
 <instance part="U3" gate="G$1" x="60.96" y="175.26"/>
@@ -16185,13 +16165,14 @@ Connector</text>
 <pinref part="R15" gate="G$1" pin="1"/>
 </segment>
 <segment>
-<pinref part="J6" gate="G$1" pin="1"/>
-<wire x1="238.76" y1="111.76" x2="241.3" y2="111.76" width="0.1524" layer="91"/>
 <pinref part="SUPPLY61" gate="G$1" pin="VBATT"/>
 <wire x1="241.3" y1="111.76" x2="241.3" y2="114.3" width="0.1524" layer="91"/>
 <pinref part="R21" gate="G$1" pin="2"/>
 <wire x1="246.38" y1="111.76" x2="241.3" y2="111.76" width="0.1524" layer="91"/>
+<wire x1="241.3" y1="111.76" x2="241.3" y2="109.22" width="0.1524" layer="91"/>
 <junction x="241.3" y="111.76"/>
+<pinref part="J6" gate="G$1" pin="2"/>
+<wire x1="241.3" y1="109.22" x2="238.76" y2="109.22" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <pinref part="L1" gate="&gt;NAME" pin="1"/>
@@ -16375,10 +16356,8 @@ Connector</text>
 <wire x1="241.3" y1="83.82" x2="241.3" y2="86.36" width="0.1524" layer="91"/>
 <wire x1="241.3" y1="86.36" x2="241.3" y2="99.06" width="0.1524" layer="91"/>
 <junction x="241.3" y="86.36"/>
-<pinref part="J6" gate="G$1" pin="2"/>
 <wire x1="241.3" y1="99.06" x2="241.3" y2="101.6" width="0.1524" layer="91"/>
 <wire x1="241.3" y1="101.6" x2="241.3" y2="106.68" width="0.1524" layer="91"/>
-<wire x1="241.3" y1="106.68" x2="238.76" y2="106.68" width="0.1524" layer="91"/>
 <label x="238.76" y="101.6" size="1.27" layer="95" rot="R180" xref="yes"/>
 <wire x1="238.76" y1="101.6" x2="241.3" y2="101.6" width="0.1524" layer="91"/>
 <junction x="241.3" y="101.6"/>
@@ -16388,6 +16367,8 @@ Connector</text>
 <junction x="241.3" y="99.06"/>
 <pinref part="C32" gate="G$1" pin="2"/>
 <wire x1="246.38" y1="99.06" x2="246.38" y2="96.52" width="0.1524" layer="91"/>
+<pinref part="J6" gate="G$1" pin="1"/>
+<wire x1="241.3" y1="106.68" x2="238.76" y2="106.68" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <pinref part="F2" gate="G$1" pin="1"/>
@@ -16500,6 +16481,7 @@ Connector</text>
 <errors>
 <approved hash="202,1,35.56,58.42,J7,4,,,,"/>
 <approved hash="202,1,200.66,175.26,X3,RXD,,,,"/>
+<approved hash="113,1,134.857,96.7461,J10,,,,,"/>
 </errors>
 </schematic>
 </drawing>
