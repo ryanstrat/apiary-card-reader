@@ -1,4 +1,3 @@
-/*
 #include <Arduino.h>
 #include <SPI.h>
 #include <WiFi101.h>
@@ -132,4 +131,3 @@ void printEncryptionType(int thisType) {
       break;
   }
 }
-*/
