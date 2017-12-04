@@ -14808,6 +14808,7 @@ In this library you will find LEDs and other visual output devices.
 <text x="256.54" y="53.34" size="1.27" layer="97">PS</text>
 <text x="182.88" y="127" size="2.54" layer="97">LCD Display</text>
 <text x="193.04" y="104.14" size="1.27" layer="97">LCD Backlight</text>
+<text x="15.24" y="116.84" size="1.27" layer="97">Move LCD-MOSI and LCD-SCK to pins 29+30</text>
 </plain>
 <instances>
 <instance part="FRAME1" gate="G$1" x="0" y="0"/>
