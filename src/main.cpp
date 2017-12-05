@@ -25,8 +25,7 @@ void printWiFiStatus();
 void keyPressed();
 void displayID();
 void sendToApiary();
-//void writeToSD();
-//void closeDataFile();
+void writeToSD();
 
 File config;
 File writeData;
@@ -176,8 +175,9 @@ void keyPressed(){
     counter++;
   } else {
     displayID();
+    writeToSD();
     delay(500);
-    sendToApiary();
+//    sendToApiary();
 
     u8g2.clearBuffer();
     u8g2.drawStr(0,10,"done");
@@ -264,28 +264,23 @@ void sendToApiary(){
   }
 }
 
-//void writeToSD(){
-//  writeData = SD.open("test.txt", FILE_WRITE);
-//
-//  // if the file opened okay, write to it:
-//  if (writeData) {
-//    u8g2.clearBuffer();
-//    u8g2.drawStr(0,10,"Writing to SD...");
-//    u8g2.sendBuffer();
-//    writeToSD.println(gtid);
-//    // close the file:
-//    Serial.println("done.");
-//  } else {
-//    // if the file didn't open, print an error:
-//    u8g2.clearBuffer();
-//    u8g2.drawStr(0,10,"error opening test.txt");
-//    u8g2.sendBuffer();
-//  }
-//}
-//
-//void closeDataFile(){
-//    writeToSD.close();
-//    u8g2.clearBuffer();
-//    u8g2.drawStr(0,10,"Data file closed");
-//    u8g2.sendBuffer();
-//}
+void writeToSD(){
+  writeData = SD.open("test.txt", FILE_WRITE);
+
+  // if the file opened okay, write to it:
+  if (writeData) {
+    u8g2.clearBuffer();
+    u8g2.drawStr(0,10,"Writing to SD...");
+    u8g2.sendBuffer();
+    writeData.write(gtid);
+    writeData.write('\n');
+    // close the file:
+    writeData.close();
+    Serial.println("done.");
+  } else {
+    // if the file didn't open, print an error:
+    u8g2.clearBuffer();
+    u8g2.drawStr(0,10,"error opening test.txt");
+    u8g2.sendBuffer();
+  }
+}
