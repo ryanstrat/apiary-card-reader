@@ -19,6 +19,21 @@ KeyboardController keyboard(usb);
 
 U8G2_ST7565_NHD_C12864_F_4W_SW_SPI u8g2(U8G2_R2, /* clock=*/ 1, /* data=*/ 0, /* cs=*/ 2, /* dc=*/ 11, /* reset=*/ 5);
 
+//menu stuff
+const char *string_list =
+  "Aug Gen Meeting\n"
+  "Sept Gen Meeting\n"
+  "Oct Gen Meeting\n"
+  "Nov Gen Meeting\n"
+  "Jan Gen Meeting\n"
+  "Feb Gen Meeting\n"
+  "Mar Gen Meeting\n"
+  "Apr Gen Meeting";
+
+uint8_t current_selection = 1;
+uint8_t event_selection = 1;
+int selected = 0;
+
 char* wifiConnect;
 
 void printWiFiStatus();
@@ -26,6 +41,7 @@ void keyPressed();
 void displayID();
 void sendToApiary();
 void writeToSD();
+void menu();
 
 File config;
 File writeData;
@@ -50,7 +66,7 @@ int counter = 0;
 
 void setup() {
   //Initialize LCD
-  u8g2.begin();
+  u8g2.begin(/*Select=*/ 15, /*Right/Next=*/ 19, /*Left/Prev=*/ 19, /*Up=*/ 18, /*Down=*/ 16, /*Home/Cancel=*/ 14); // Arduboy 10 (Production)
   u8g2.setContrast(255);
   u8g2.setFont(u8g2_font_6x12_tr);
   gtid[9] = '\0';
@@ -117,16 +133,13 @@ void setup() {
   }
   wifiConnect = "Connected to WiFi!";
   printWiFiStatus();
+  delay(1500);
 
-//  u8g2.clearBuffer();          // clear the internal memory
-//  u8g2.drawStr(0,10,wifiConnect); // write something to the internal memory
-//  u8g2.drawStr(0,30,"Hello world!");
-//  u8g2.sendBuffer();         // transfer internal memory to the display
-  delay(1000);
-
-  u8g2.clearBuffer();
-  u8g2.drawStr(0,10,"Swipe Card");
-  u8g2.sendBuffer();
+  menu();
+//
+//  u8g2.clearBuffer();
+//  u8g2.drawStr(0,10,"Swipe Card");
+//  u8g2.sendBuffer();
 
 }
 
@@ -139,7 +152,8 @@ void loop() {
 void printWiFiStatus() {
 
   u8g2.clearBuffer();
-  u8g2.drawStr(0,10,WiFi.SSID());
+  u8g2.drawStr(0,10,"Connected to");
+  u8g2.drawStr(0,20,WiFi.SSID());
 
 //  IPAddress ip = WiFi.localIP();
 //  u8g2.drawStr(0,10,ip);
@@ -147,7 +161,7 @@ void printWiFiStatus() {
   long rssi = WiFi.RSSI();
   char rssiStr[30];
   itoa(rssi, rssiStr, 30);
-  u8g2.drawStr(0,30,rssiStr);
+  u8g2.drawStr(0,40,rssiStr);
 
   u8g2.sendBuffer();
 
@@ -180,8 +194,8 @@ void keyPressed(){
 //    sendToApiary();
 
     u8g2.clearBuffer();
-    u8g2.drawStr(0,10,"done");
-    u8g2.drawStr(0,20,"ready for new card");
+    u8g2.drawStr(0,10,"Done");
+    u8g2.drawStr(0,20,"Ready for new card");
     u8g2.sendBuffer();
 //    delay(2000);
 
@@ -245,7 +259,7 @@ void sendToApiary(){
   }
 
   int buffcounter = 0;
-  char response[30];
+  char response[10000];
   while (client.available()) {
     char c = client.read();
     response[buffcounter] = c;
@@ -254,7 +268,7 @@ void sendToApiary(){
     u8g2.clearBuffer();
     u8g2.drawStr(0,10,response);
     u8g2.sendBuffer();
-//    Serial.write(c);
+    delay(5000);
 
   // if the server's disconnected, stop the client:
   if (!client.connected()) {
@@ -276,11 +290,42 @@ void writeToSD(){
     writeData.write('\n');
     // close the file:
     writeData.close();
+    delay(1000);
     Serial.println("done.");
   } else {
     // if the file didn't open, print an error:
     u8g2.clearBuffer();
     u8g2.drawStr(0,10,"error opening test.txt");
     u8g2.sendBuffer();
+  }
+}
+
+void menu() {
+  while (!selected) {
+    current_selection = u8g2.userInterfaceSelectionList(
+      "ROBOJACKETS EVENTS",
+      current_selection,
+      string_list);
+
+    if ( current_selection == 0 ) {
+      u8g2.userInterfaceMessage(
+    "Nothing selected.",
+    "",
+    "",
+    " ok ");
+    } else {
+      event_selection = u8g2.userInterfaceMessage(
+    "Selection:",
+    u8x8_GetStringLineStart(current_selection-1, string_list ),
+    "",
+    " ok ");
+      if (event_selection != 0) {
+        selected = 1;
+        u8g2.clearBuffer();
+        u8g2.drawStr(0,10,"SWIPE CARD");
+        u8g2.drawStr(0,20,"   >>>");
+        u8g2.sendBuffer();
+      }
+    }
   }
 }
